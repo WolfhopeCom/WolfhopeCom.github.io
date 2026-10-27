@@ -1,0 +1,25 @@
+:root{--sky:#dff1fb;--grass:#4f9f37;--grass-dk:#2f6f2a;--cream:#fffaf0;--paper:#f7eedb;--timber:#8a5a3a;--ink:#2a3a2a;--muted:#5d6b5a;--gold:#f2b21f;--line:#e2d4b6}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--sky) 0,#eef7e6 340px,var(--cream) 700px);color:var(--ink);font:17px/1.6 "Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;align-items:center;gap:12px}
+header img{width:52px;height:52px;border-radius:12px;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+header a{font-family:"Lilita One","Arial Rounded MT Bold",sans-serif;color:var(--grass-dk);text-decoration:none;font-size:26px;letter-spacing:.5px}
+nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 24px}
+nav a{color:var(--grass-dk);text-decoration:none;font-weight:800}
+h1,h2,h3{font-family:"Lilita One","Arial Rounded MT Bold",sans-serif;font-weight:400;color:var(--grass-dk);line-height:1.15}
+h1{font-size:36px;margin:10px 0}
+h2{font-size:23px;margin:30px 0 6px}
+p,li{color:var(--muted)}
+strong,b{color:var(--ink)}
+a{color:var(--grass-dk)}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:18px 20px;margin:18px 0;box-shadow:0 4px 0 rgba(138,90,58,.18)}
+.btn{display:inline-block;font-family:"Lilita One","Arial Rounded MT Bold",sans-serif;background:var(--grass);color:#fff;font-size:19px;padding:11px 20px;border-radius:16px;text-decoration:none;box-shadow:0 5px 0 var(--grass-dk)}
+.hero{text-align:center;margin:6px 0 18px}
+.hero h1{font-size:52px;margin:6px 0 0;color:#fff;text-shadow:0 3px 0 var(--grass-dk),0 0 18px rgba(47,111,42,.35);-webkit-text-stroke:2px var(--grass-dk)}
+.hero .sub{font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--timber);font-size:14px}
+.shots{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory}
+.shots img{width:min(260px,62vw);flex:none;border-radius:22px;scroll-snap-align:start;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+details{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:10px 14px;margin:8px 0}
+summary{font-weight:800;cursor:pointer;color:var(--ink)}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:14px}
