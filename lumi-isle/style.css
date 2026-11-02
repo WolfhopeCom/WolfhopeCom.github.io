@@ -1,0 +1,24 @@
+:root{--sky:#cfe3ff;--lav:#e9e4fb;--cream:#fffaf4;--paper:#ffffff;--ink:#26244a;--muted:#5f5d80;--leaf:#2f9a69;--leaf-dk:#1d6a48;--glow:#ffb84d;--line:#e6e2f2}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--sky) 0,var(--lav) 320px,var(--cream) 680px);color:var(--ink);font:17px/1.6 "Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;align-items:center;gap:12px}
+header img{width:52px;height:52px;border-radius:13px;box-shadow:0 6px 16px -6px rgba(38,36,74,.4)}
+header a{font-family:"Fredoka","Arial Rounded MT Bold",sans-serif;font-weight:600;color:var(--ink);text-decoration:none;font-size:26px}
+nav{display:flex;flex-wrap:wrap;gap:6px 18px;margin:10px 0 24px}
+nav a{color:var(--leaf-dk);text-decoration:none;font-weight:800}
+h1,h2,h3{font-family:"Fredoka","Arial Rounded MT Bold",sans-serif;font-weight:600;color:var(--ink);line-height:1.15}
+h1{font-size:36px;margin:10px 0}
+h2{font-size:22px;margin:30px 0 6px}
+p,li{color:var(--muted)}
+strong,b{color:var(--ink)}
+a{color:var(--leaf-dk)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px 20px;margin:18px 0;box-shadow:0 12px 28px -18px rgba(38,36,74,.35)}
+.hero{text-align:center;margin:10px 0 18px}
+.hero img{width:132px;height:132px;border-radius:30px;box-shadow:0 18px 40px -16px rgba(38,36,74,.5)}
+.hero h1{font-size:48px;margin:14px 0 0}
+.hero .sub{font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);font-size:13px}
+.soon{display:inline-block;font-family:"Fredoka",sans-serif;font-weight:600;background:linear-gradient(180deg,#ffd27a,var(--glow));color:#5a3a00;font-size:18px;padding:11px 22px;border-radius:999px;box-shadow:0 8px 18px -8px rgba(255,170,60,.8)}
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin:8px 0}
+summary{font-weight:800;cursor:pointer;color:var(--ink)}
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:14px}
