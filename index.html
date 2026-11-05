@@ -5,118 +5,97 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wolfhope Co. · Independent iPhone and iPad apps and games</title>
 <meta name="description" content="Wolfhope Co. is a small independent studio in Ohio making iPhone and iPad apps and games: All-Sports Scoreboard, TypeMonkey and Emberfall: My Lord.">
-<meta name="theme-color" content="#2F46E8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1A2170" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F8FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1020" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Wolfhope Co.">
 <meta property="og:description" content="A small independent studio making iPhone and iPad apps and games.">
 <meta property="og:url" content="https://wolfhopeco.com/">
 <meta property="og:image" content="https://wolfhopeco.com/img/scoreboard.jpg">
 <link rel="canonical" href="https://wolfhopeco.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%23FFB020'/%3E%3Cpath d='M7 10l4.5 14L17 14.5 22.5 24 27 10' fill='none' stroke='%2316120A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/baloo2.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='9' fill='%232F55E4'/%3E%3Cpath d='M7 10l4.5 14L17 14.5 22.5 24 27 10' fill='none' stroke='%23FFFFFF' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="home.css">
 </head>
 <body>
 <a class="skip" href="#apps">Skip to apps</a>
 
-<header class="hero" aria-labelledby="hero-title">
-  <div class="sky" aria-hidden="true">
-    <span class="sun"></span>
-    <span class="stars"></span>
-  </div>
-
-  <div class="wrap bar">
-    <a class="brand" href="./" aria-label="Wolfhope Co. home">
-      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect x="2" y="2" width="36" height="36" rx="11" fill="#FFB020"/><path d="M9 12.5l5 15.5 6-10.5 6 10.5 5-15.5" fill="none" stroke="#16120A" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Wolfhope Co.</span>
-    </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#apps">Apps</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-
-  <div class="wrap hero-copy">
-    <h1 id="hero-title"><span>Small studio.</span> <span>Big little apps.</span></h1>
-    <p class="lede">We make friendly apps and games for iPhone and iPad, in Ohio.</p>
-    <a class="btn btn-amber btn-big" href="#apps">See our apps</a>
-  </div>
-
-  <svg class="hills" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <path class="hill-back" d="M0 120C160 60 300 50 470 96s300 70 470 20 330-90 500-40v144H0z"/>
-    <path class="hill-mid" d="M0 160c200-70 380-80 560-30s340 60 520 10 260-50 360-30v110H0z"/>
-    <path class="hill-front" d="M0 196c240-40 480-46 720-20s480 26 720-6v50H0z"/>
-  </svg>
+<header class="wrap bar">
+  <a class="brand" href="./" aria-label="Wolfhope Co. home">
+    <svg class="mark" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect width="34" height="34" rx="9"/><path d="M7 10l4.5 14L17 14.5 22.5 24 27 10"/></svg>
+    <span>Wolfhope Co.</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#apps">Apps</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <main id="main">
 
-<section class="wrap section" id="apps" aria-labelledby="apps-title">
-  <h2 id="apps-title">Our apps</h2>
+<section class="wrap hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">Small studio.<br>Big little apps.</h1>
+    <p class="lede">Wolfhope Co. makes apps and games for iPhone and iPad, from Ohio.</p>
+    <a class="btn" href="#apps">See our apps</a>
+  </div>
+  <div class="hero-icons" aria-hidden="true">
+    <div class="tile led"><span>21</span></div>
+    <img class="tile" src="typemonkey/icon.png" width="160" height="160" alt="">
+    <img class="tile pixel" src="emberfall/icon.png" width="160" height="160" alt="">
+  </div>
+</section>
+
+<section class="wrap section rule" id="apps" aria-labelledby="apps-title">
+  <h2 id="apps-title">Apps</h2>
 
   <ul class="apps">
     <!-- Second Glance, Curb Appeal and Scape Calc cards hidden for now (Nov 2026); their pages at /secondglance/ and /curbappeal/ stay live for the App Store. Restore from git history. -->
-    <li class="app app-score">
-      <div class="art" aria-hidden="true">
-        <div class="icon led"><span>21</span><i></i><i></i><i></i></div>
-      </div>
-      <div class="body">
-        <h3><a href="scoreboard/">All-Sports Scoreboard</a></h3>
-        <p>A big, easy-to-read scoreboard for 14 sports. Works offline.</p>
-        <div class="links">
-          <a class="btn btn-app" href="https://apps.apple.com/app/id6819901329" aria-label="All-Sports Scoreboard on the App Store">App Store</a>
-          <a class="text-link" href="support.html" aria-label="All-Sports Scoreboard support">Support</a>
-          <a class="text-link" href="privacy.html" aria-label="All-Sports Scoreboard privacy policy">Privacy</a>
-        </div>
+    <li class="app">
+      <div class="icon led" aria-hidden="true"><span>21</span></div>
+      <h3><a href="scoreboard/">All-Sports Scoreboard</a></h3>
+      <p>A clear, easy-to-read scoreboard for 14 sports. Works offline.</p>
+      <div class="links">
+        <a class="btn btn-sm" href="https://apps.apple.com/app/id6819901329" aria-label="All-Sports Scoreboard on the App Store">App Store</a>
+        <a href="support.html" aria-label="All-Sports Scoreboard support">Support</a>
+        <a href="privacy.html" aria-label="All-Sports Scoreboard privacy policy">Privacy</a>
       </div>
     </li>
 
-    <li class="app app-monkey">
-      <div class="art" aria-hidden="true">
-        <img class="icon" src="typemonkey/icon.png" width="132" height="132" alt="">
-      </div>
-      <div class="body">
-        <h3><a href="typemonkey/">TypeMonkey: Learn to Code</a></h3>
-        <p>Bite-size coding lessons, plus TypeMonkey Jr. for ages 7–12. No ads.</p>
-        <div class="links">
-          <a class="btn btn-app" href="https://apps.apple.com/app/id6820330917" aria-label="TypeMonkey on the App Store">App Store</a>
-          <a class="text-link" href="typemonkey/support.html" aria-label="TypeMonkey support">Support</a>
-          <a class="text-link" href="typemonkey/privacy.html" aria-label="TypeMonkey privacy policy">Privacy</a>
-        </div>
+    <li class="app">
+      <img class="icon" src="typemonkey/icon.png" width="80" height="80" alt="TypeMonkey app icon">
+      <h3><a href="typemonkey/">TypeMonkey: Learn to Code</a></h3>
+      <p>Bite-size coding lessons, plus TypeMonkey Jr. for ages 7–12. No ads.</p>
+      <div class="links">
+        <a class="btn btn-sm" href="https://apps.apple.com/app/id6820330917" aria-label="TypeMonkey on the App Store">App Store</a>
+        <a href="typemonkey/support.html" aria-label="TypeMonkey support">Support</a>
+        <a href="typemonkey/privacy.html" aria-label="TypeMonkey privacy policy">Privacy</a>
       </div>
     </li>
 
-    <li class="app app-ember">
-      <div class="art" aria-hidden="true">
-        <img class="icon pixel" src="emberfall/icon.png" width="132" height="132" alt="">
-      </div>
-      <div class="body">
-        <h3><a href="emberfall/">Emberfall: My Lord</a></h3>
-        <p>A pixel-art kingdom story: one year on the throne, a murder to solve, 21 endings.</p>
-        <div class="links">
-          <a class="btn btn-app" href="https://apps.apple.com/app/id6822528144" aria-label="Emberfall: My Lord on the App Store">App Store</a>
-          <a class="text-link" href="emberfall/support.html" aria-label="Emberfall: My Lord support">Support</a>
-          <a class="text-link" href="emberfall/privacy.html" aria-label="Emberfall: My Lord privacy policy">Privacy</a>
-        </div>
+    <li class="app">
+      <img class="icon pixel" src="emberfall/icon.png" width="80" height="80" alt="Emberfall: My Lord app icon">
+      <h3><a href="emberfall/">Emberfall: My Lord</a></h3>
+      <p>A pixel-art medieval story game: a year on the throne, a murder to solve, 21 endings.</p>
+      <div class="links">
+        <a class="btn btn-sm" href="https://apps.apple.com/app/id6822528144" aria-label="Emberfall: My Lord on the App Store">App Store</a>
+        <a href="emberfall/support.html" aria-label="Emberfall: My Lord support">Support</a>
+        <a href="emberfall/privacy.html" aria-label="Emberfall: My Lord privacy policy">Privacy</a>
       </div>
     </li>
   </ul>
 </section>
 
-<section class="wrap section about" id="about" aria-labelledby="about-title">
+<section class="wrap section split rule" id="about" aria-labelledby="about-title">
   <h2 id="about-title">About</h2>
   <p>Wolfhope Co. is an independent studio in Ohio, founded by developer Harrison Wolfhope. We design, build and support every app ourselves.</p>
 </section>
 
-<section class="wrap section" id="contact" aria-labelledby="contact-title">
-  <div class="contact">
-    <div>
-      <h2 id="contact-title">Say hello</h2>
-      <p>Questions, bugs or ideas? Email <a href="mailto:wolfhopeco@gmail.com">wolfhopeco@gmail.com</a> or visit our support page.</p>
-    </div>
-    <a class="btn btn-ink btn-big" href="support.html">Visit support</a>
+<section class="wrap section split rule" id="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">Contact</h2>
+  <div>
+    <p>Questions, bugs or ideas? Visit our <a href="support.html">support page</a> or email <a href="mailto:wolfhopeco@gmail.com">wolfhopeco@gmail.com</a>.</p>
+    <a class="btn btn-outline" href="support.html">Visit support</a>
   </div>
 </section>
 
@@ -124,7 +103,7 @@
 
 <!-- LEGAL NAME: once the LLC is approved, add the registered legal entity name here,
      e.g. "© 2026 [Legal name]" and/or a line such as "Wolfhope is a trade name of [Legal name], Ohio, USA." -->
-<footer class="wrap footer">
+<footer class="wrap footer rule">
   <span>© 2026 Wolfhope Co.</span>
   <nav aria-label="Footer">
     <a href="privacy.html">Privacy</a>
