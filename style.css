@@ -1,112 +1,159 @@
-/* Wolfhope shared styles: homepage, root support/privacy pages and the Scoreboard page. */
+/* Wolfhope Co. shared styles for every page except the homepage (home.css).
+   Same palette, type and sizes as home.css; keep the two token blocks in sync. */
+
+/* ---------- Palette: the only colors on these pages (app icons and screenshots aside) ---------- */
 :root{
   color-scheme:light dark;
-  --bg:#F7F5F0;--bg-2:#EFEBE2;--panel:#FFFFFF;--text:#16181D;--muted:#4D5361;--line:#E1DCD0;
-  --accent:#8A5200;          /* links/eyebrows on light: 6.1:1 on --bg */
-  --amber:#FFB020;           /* brand amber, used as a fill with dark text */
-  --on-amber:#16120A;
-  --shadow:0 1px 2px rgba(22,24,29,.06),0 8px 24px rgba(22,24,29,.06);
-  --radius:18px;
+  --bg:#F7F8FA;        /* page background */
+  --surface:#FFFFFF;   /* cards */
+  --text:#0E1424;      /* headings and body */
+  --muted:#596174;     /* secondary text */
+  --line:#E2E5EC;      /* borders and dividers */
+  --accent:#2F55E4;    /* the one accent: buttons, links, focus */
+  --on-accent:#FFFFFF; /* text on accent */
+  --shadow:rgba(14,20,36,.28);
+  /* Header bar: the same navy, white and blue as dark mode */
+  --band:#0B1020;
+  --band-text:#F7F8FA;
+  --band-muted:#A3ABBD;
+  --band-accent:#8DA5FF;
+  --pad:clamp(16px,4vw,32px);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#0B0C10;--bg-2:#12141A;--panel:#15181F;--text:#F2F3F5;--muted:#A3A9B5;--line:#262A35;
-    --accent:#FFB84D;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    --bg:#0B1020;
+    --surface:#131A2E;
+    --text:#EEF1F7;
+    --muted:#A3ABBD;
+    --line:#242C44;
+    --accent:#8DA5FF;
+    --on-accent:#0B1020;
+    --shadow:rgba(0,0,0,.7);
+    --band:#131A2E;
   }
 }
+
+/* ---------- Base ---------- */
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;overflow-wrap:break-word}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--font);
+  overflow-x:hidden;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
 img{max-width:100%}
-a{color:var(--accent);text-underline-offset:2px}
-a:focus-visible,.btn:focus-visible,.store:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
-.skip{position:absolute;left:-9999px;top:8px;background:var(--panel);color:var(--text);padding:8px 14px;border-radius:8px;z-index:10}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-9999px;top:10px;z-index:20;background:var(--surface);color:var(--text);padding:10px 16px;border-radius:10px;border:1px solid var(--line)}
 .skip:focus{left:16px}
-
-/* ---------- Text pages (support, privacy, app pages) ---------- */
-main{max-width:720px;margin:0 auto;padding:32px 16px 80px}
-.eyebrow{font:600 13px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.24em;color:var(--accent);text-transform:uppercase}
-.eyebrow a{text-decoration:none}
-h1{font-size:clamp(32px,7vw,40px);line-height:1.1;margin:10px 0 8px;letter-spacing:-.01em}
-h2{font-size:21px;line-height:1.3;margin:36px 0 8px}
+h1,h2,h3{color:var(--text);font-family:var(--font);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+h1{font-size:clamp(28px,4vw,38px);line-height:1.1;letter-spacing:-.03em;margin:8px 0 12px}
+h2{font-size:19px;margin:32px 0 6px}
+h3{font-size:16px;margin:0 0 4px}
 p,li{color:var(--muted)}
 strong,b{color:var(--text)}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:24px 0;box-shadow:var(--shadow)}
+ul{padding-left:20px}
+code{background:var(--surface);border:1px solid var(--line);padding:1px 5px;border-radius:5px;font-size:.9em}
+
+/* ---------- Header bar (compact version of the homepage band) ---------- */
+.topbar{margin:clamp(8px,1.4vw,16px);border-radius:clamp(16px,2vw,22px);background-color:var(--band);color:var(--band-text);
+  background-image:radial-gradient(50% 140% at 90% 0%,color-mix(in srgb,var(--band-accent) 26%,transparent),transparent 70%)}
+.topbar :focus-visible{outline-color:var(--band-accent)}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--band-text);text-decoration:none;font-weight:700;font-size:16px;letter-spacing:-.01em}
+.mark{width:30px;height:30px;flex:none}
+.mark .m-head{fill:var(--band-accent)}
+.mark .m-ear{fill:var(--band);fill-opacity:.45}
+.mark .m-muzzle{fill:#DDE4FF}
+.mark .m-eye{fill:var(--band)}
+.nav{display:flex;flex-wrap:wrap;gap:0 22px}
+.nav a{color:var(--band-muted);text-decoration:none;font-weight:500;font-size:15px;padding:8px 0}
+.nav a:hover{color:var(--band-text)}
+
+/* ---------- Page column ---------- */
+main{display:block;width:100%;max-width:760px;margin:0 auto;padding:clamp(20px,4vw,40px) var(--pad) clamp(40px,6vw,64px)}
+main > *:first-child{margin-top:0}
+
+/* App name and icon at the top of each app's pages, then that app's own links */
+main > header{display:flex;align-items:center;gap:14px;margin:0 0 6px}
+main > header img{width:56px;height:56px;border-radius:22.5%;object-fit:cover;flex:none;box-shadow:0 0 0 1px var(--line),0 6px 16px -6px var(--shadow)}
+main > header a{color:var(--text);text-decoration:none;font-size:20px;font-weight:700;letter-spacing:-.015em}
+main > header a:hover{text-decoration:underline}
+main > nav{display:flex;flex-wrap:wrap;gap:0 20px;margin:6px 0 clamp(20px,3vw,32px);padding-bottom:10px;border-bottom:1px solid var(--line)}
+main > nav a{display:inline-flex;align-items:center;min-height:40px;font-size:15px;font-weight:500;text-decoration:none}
+main > nav a:hover{text-decoration:underline}
+main > nav.links{border-bottom:0;padding-bottom:0;margin-top:28px}
+
+/* Small label above a heading (links back to the app on shared pages) */
+.eyebrow{margin:0 0 2px;font-size:15px;font-weight:600;color:var(--muted)}
+.eyebrow a{text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
+
+/* ---------- Building blocks ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:20px 0;
+  box-shadow:0 1px 2px color-mix(in srgb,var(--shadow) 30%,transparent)}
+.card > :first-child{margin-top:0}
+.card > :last-child{margin-bottom:0}
+.note,.sub,.muted{color:var(--muted)}
 .note{font-size:15px}
-nav.links{display:flex;gap:8px 20px;margin-top:28px;flex-wrap:wrap}
-footer{margin-top:56px;border-top:1px solid var(--line);padding-top:18px;font-size:14px;color:var(--muted)}
-footer a{color:var(--muted)}
-footer a:hover{color:var(--accent)}
+.sub{font-size:14px;margin:6px 0 0}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}
+summary{font-weight:600;cursor:pointer;color:var(--text)}
+details[open] summary{margin-bottom:4px}
+details p{margin:6px 0 2px}
 
-/* ---------- Site header ---------- */
-.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding-bottom:8px}
-.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em}
-.brand svg{width:34px;height:34px;flex:none}
-.site-nav{display:flex;flex-wrap:wrap;gap:4px 18px}
-.site-nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
-.site-nav a:hover{color:var(--text)}
+.btn,.store,.soon{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;border-radius:11px;
+  background:var(--accent);color:var(--on-accent);border:1px solid var(--accent);font:600 15px/1.2 var(--font);text-decoration:none;transition:filter .15s ease}
+.btn:hover,.store:hover{filter:brightness(1.08)}
+.store{margin:18px 0 4px}
+.soon{min-height:0;padding:8px 16px;border-radius:999px;background:var(--surface);border-color:var(--line);color:var(--text);font-size:14px}
 
-/* ---------- Homepage ---------- */
-.wide{max-width:1080px}
-.hero{padding:56px 0 40px}
-.hero h1{font-size:clamp(36px,8vw,60px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 18px;max-width:14ch}
-.hero .lede{font-size:clamp(18px,2.4vw,21px);max-width:38em;margin:0 0 28px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:14px;font-weight:700;text-decoration:none;font-size:16px}
-.btn-primary{background:var(--amber);color:var(--on-amber)}
-.btn-primary:hover{filter:brightness(1.05)}
-.btn-ghost{color:var(--text);border:1px solid var(--line);background:var(--panel)}
-.btn-ghost:hover{border-color:var(--muted)}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin:32px 0 0;padding:0;list-style:none;font-size:15px}
-.facts li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--amber);margin-right:9px;vertical-align:2px}
+/* Big app title on app landing pages */
+.hero{margin:8px 0 20px}
+.hero img{width:96px;height:96px;border-radius:22.5%;display:block;margin:0 0 16px;box-shadow:0 0 0 1px var(--line),0 12px 28px -12px var(--shadow)}
+.hero h1{font-size:clamp(34px,6vw,52px);margin:0}
+.hero .sub{font-size:15px;font-weight:600;margin-top:6px}
 
-.section{padding:40px 0}
-.section > h2{font-size:clamp(26px,4vw,32px);letter-spacing:-.015em;margin:8px 0 6px}
-.section-intro{margin:0 0 28px;max-width:40em}
+/* Screenshots: a swipeable row */
+.shots{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;margin:24px 0;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots img{flex:none;width:min(440px,82vw);height:auto;border-radius:14px;border:1px solid var(--line);scroll-snap-align:start;display:block}
+/* Portrait screenshots (Curb Appeal) */
+.shots-tall img{width:min(240px,60vw)}
+/* All-Sports Scoreboard: landscape shots in a grid */
+.shots-grid{display:grid;grid-template-columns:1fr;gap:12px;overflow:visible}
+.shots-grid img{width:100%}
+.shots-grid .row{display:grid;grid-template-columns:2.2fr 1fr;gap:12px;align-items:start}
+@media (max-width:560px){.shots-grid .row{grid-template-columns:1fr}}
 
-.apps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px}
-.app{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-.app-top{display:flex;gap:16px;align-items:center;margin-bottom:12px}
-.app-icon{width:68px;height:68px;border-radius:16px;flex:none;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.12)}
-.app-icon.pixel{image-rendering:pixelated}
-.icon-scapecalc{display:grid;place-items:center;background:#1F4D36;color:#F4EFE3;font:700 24px/1 system-ui,-apple-system,"Segoe UI",sans-serif}
-.icon-scoreboard{display:grid;place-items:center;background:#07080B;color:#FFB020;font:700 30px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;text-shadow:0 0 12px rgba(255,176,32,.55)}
-.app h3{font-size:19px;line-height:1.25;margin:0 0 4px}
-.app h3 a{color:var(--text);text-decoration:none}
-.app h3 a:hover{text-decoration:underline}
-.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--bg-2);color:var(--muted)}
-.tag.live{background:var(--amber);color:var(--on-amber)}
-.app p{margin:0 0 18px;font-size:16px}
-.app-links{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 16px;padding-top:14px;border-top:1px solid var(--line);font-size:15px;font-weight:600}
-.app-links a{text-decoration:none}
-.app-links a:hover{text-decoration:underline}
-.app-links .store-link{color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px;margin:20px 0}
+.grid .card{margin:0}
+.grid p{margin:0;font-size:15px}
+.center{text-align:center}
 
-.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;margin:0;padding:0;list-style:none}
-.values li{background:var(--bg-2);border-radius:var(--radius);padding:20px}
-.values strong{display:block;font-size:17px;margin-bottom:4px}
+/* All-Sports Scoreboard has no icon image: an LED scoreboard tile (an app icon, so it keeps its own colors) */
+.digits{display:grid;place-items:center;width:96px;height:96px;border-radius:22.5%;background:#07080B;color:#FFB020;
+  font:700 40px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.02em;text-shadow:0 0 .25em rgba(255,176,32,.6);
+  box-shadow:0 0 0 1px var(--line),0 12px 28px -12px var(--shadow);margin:0 0 16px}
 
-.contact{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-.contact h2{margin:0 0 6px}
-.contact p{margin:0;max-width:34em}
+/* ---------- Footer (same as the homepage) ---------- */
+.footer{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;
+  padding-top:24px;padding-bottom:32px;font-size:14px;color:var(--muted);
+  background:linear-gradient(var(--line),var(--line)) no-repeat center top/calc(100% - 2 * var(--pad)) 1px}
+.footer nav{display:flex;gap:4px 20px}
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--accent)}
+/* Older pages keep their footer inside the page column */
+main > footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+main > footer a{color:var(--muted)}
 
-.site-footer{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;align-items:center}
-.site-footer nav{display:flex;gap:6px 20px;flex-wrap:wrap}
-
-/* ---------- All-Sports Scoreboard page ---------- */
-.digits{font:700 64px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#FFB020;text-shadow:0 0 24px rgba(255,176,32,.45);letter-spacing:.06em}
-@media (prefers-color-scheme:light){.digits{color:#B36B00;text-shadow:none}}
-.store{display:inline-flex;align-items:center;gap:10px;margin:22px 0 6px;padding:14px 22px;border-radius:14px;background:var(--amber);color:var(--on-amber);font-weight:700;font-size:17px;text-decoration:none;box-shadow:0 0 28px rgba(255,176,32,.35)}
-.store:hover{filter:brightness(1.06)}
-.sub{font-size:14px;color:var(--muted);margin:4px 0 0}
-.shots{display:grid;grid-template-columns:1fr;gap:14px;margin:32px 0}
-.shots img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}
-.shots .row{display:grid;grid-template-columns:2.2fr 1fr;gap:14px;align-items:start}
-@media (max-width:560px){.shots .row{grid-template-columns:1fr}}
-
-@media (max-width:480px){
-  .hero{padding:36px 0 28px}
-  .app{padding:18px}
-  .contact{padding:22px}
+@media (max-width:420px){
+  .bar{padding-top:10px;padding-bottom:10px}
+  .brand{font-size:15px;gap:8px}
+  .mark{width:26px;height:26px}
+  .nav{gap:0 14px}
+  .nav a{font-size:14px}
+  main > nav{gap:0 16px}
+  main > nav a{min-height:36px}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (prefers-reduced-motion:reduce){.btn,.store{transition:none}}
