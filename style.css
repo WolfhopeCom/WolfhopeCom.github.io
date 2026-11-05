@@ -69,6 +69,7 @@ footer a:hover{color:var(--accent)}
 .app-top{display:flex;gap:16px;align-items:center;margin-bottom:12px}
 .app-icon{width:68px;height:68px;border-radius:16px;flex:none;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 4px 10px rgba(0,0,0,.12)}
 .app-icon.pixel{image-rendering:pixelated}
+.icon-scapecalc{display:grid;place-items:center;background:#1F4D36;color:#F4EFE3;font:700 24px/1 system-ui,-apple-system,"Segoe UI",sans-serif}
 .icon-scoreboard{display:grid;place-items:center;background:#07080B;color:#FFB020;font:700 30px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;text-shadow:0 0 12px rgba(255,176,32,.55)}
 .app h3{font-size:19px;line-height:1.25;margin:0 0 4px}
 .app h3 a{color:var(--text);text-decoration:none}
