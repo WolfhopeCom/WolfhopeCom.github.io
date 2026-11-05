@@ -44,7 +44,7 @@ a:hover{text-decoration-thickness:2px}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
 .skip{position:absolute;left:-9999px;top:10px;z-index:20;background:var(--surface);color:var(--text);padding:10px 16px;border-radius:10px;border:1px solid var(--line)}
 .skip:focus{left:16px}
-.wrap{width:100%;max-width:1040px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.wrap{width:100%;max-width:1000px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
 .rule{background:linear-gradient(var(--line),var(--line)) no-repeat center top/calc(100% - 2 * var(--pad)) 1px}
 h1,h2,h3{margin:0;color:var(--text);font-weight:700;letter-spacing:-.02em}
 
@@ -79,9 +79,9 @@ h1,h2,h3{margin:0;color:var(--text);font-weight:700;letter-spacing:-.02em}
 @media (max-width:600px){.band-mark{right:-14%;bottom:-16%}}
 .band-mark{position:absolute;z-index:-1;right:-3%;bottom:-24%;width:clamp(240px,40vw,600px);height:auto;
   fill:none;stroke:var(--band-text);stroke-opacity:.045;stroke-width:1.4;stroke-linejoin:round}
-.hero{padding-top:clamp(16px,3vw,36px);padding-bottom:clamp(28px,3.5vw,48px)}
-.hero h1{color:var(--band-text);font-size:clamp(30px,4.2vw,50px);line-height:1;letter-spacing:-.04em;font-weight:800}
-.lede{font-size:clamp(16px,1.6vw,18px);line-height:1.5;color:var(--band-muted);max-width:30em;margin:16px 0 24px}
+.hero{padding-top:clamp(12px,2.4vw,28px);padding-bottom:clamp(24px,3vw,40px)}
+.hero h1{color:var(--band-text);font-size:clamp(28px,3.6vw,44px);line-height:1;letter-spacing:-.04em;font-weight:800}
+.lede{font-size:clamp(16px,1.6vw,18px);line-height:1.5;color:var(--band-muted);max-width:30em;margin:12px 0 20px}
 .band .btn{background:var(--band-accent);border-color:var(--band-accent);color:var(--band)}
 .btn-lg{min-height:48px;padding:12px 22px;font-size:16px}
 .pixel{image-rendering:pixelated}
@@ -92,30 +92,33 @@ h1,h2,h3{margin:0;color:var(--text);font-weight:700;letter-spacing:-.02em}
 .led span{text-shadow:0 0 .25em rgba(255,176,32,.6)}
 
 /* ---------- Sections ---------- */
-.section{padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(36px,5vw,64px)}
-.section h2{font-size:clamp(24px,2.8vw,32px);line-height:1.1}
-#apps h2{margin-bottom:clamp(24px,3vw,40px)}
+.section{padding-top:clamp(28px,3.5vw,44px);padding-bottom:clamp(28px,3.5vw,44px)}
+.section h2{font-size:clamp(20px,2vw,24px);line-height:1.15}
+#apps{padding-top:clamp(20px,2.5vw,32px)}
+#apps h2{margin-bottom:14px}
 
-/* ---------- App cards ---------- */
-.apps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(14px,1.8vw,20px)}
-.app{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,2.4vw,26px);
+/* ---------- App cards: icon beside the text, compact ---------- */
+.apps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.app{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:14px;grid-template-rows:auto 1fr auto;
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px 10px;
   box-shadow:0 1px 2px color-mix(in srgb,var(--shadow) 30%,transparent);transition:transform .2s ease,box-shadow .2s ease}
-.app:hover,.app:focus-within{box-shadow:0 2px 4px color-mix(in srgb,var(--shadow) 30%,transparent),0 24px 48px -20px var(--shadow)}
-@media (prefers-reduced-motion:no-preference){.app:hover,.app:focus-within{transform:translateY(-4px)}}
-.icon{width:72px;height:72px;border-radius:22.5%;object-fit:cover;margin-bottom:18px;box-shadow:0 0 0 1px var(--line),0 6px 16px -6px var(--shadow)}
-.icon.led{font-size:30px}
-.app h3{font-size:19px;line-height:1.25}
+.app:hover,.app:focus-within{box-shadow:0 2px 4px color-mix(in srgb,var(--shadow) 30%,transparent),0 18px 36px -18px var(--shadow)}
+@media (prefers-reduced-motion:no-preference){.app:hover,.app:focus-within{transform:translateY(-2px)}}
+.icon{grid-row:1 / span 2;width:56px;height:56px;border-radius:22.5%;object-fit:cover;box-shadow:0 0 0 1px var(--line),0 4px 12px -6px var(--shadow)}
+.icon.led{font-size:23px}
+.app h3{font-size:16px;line-height:1.3;align-self:end}
 .app h3 a{color:var(--text);text-decoration:none}
 .app h3 a:hover{text-decoration:underline}
-.app p{margin:6px 0 18px;color:var(--muted);font-size:15px;line-height:1.55}
-.links{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:14px;font-weight:500}
+.app p{align-self:start;margin:3px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.links{grid-column:1 / -1;align-self:end;display:flex;flex-wrap:wrap;align-items:center;gap:0 16px;margin-top:10px;font-size:13.5px;font-weight:500}
 .links a:not(.btn){display:inline-flex;align-items:center;min-height:44px}
+.links .btn-sm{min-height:34px;padding:6px 12px;font-size:13.5px;border-radius:9px}
 
-/* ---------- About and contact ---------- */
-.split{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
-.split p{margin:0;font-size:clamp(16px,1.6vw,18px);line-height:1.55;max-width:32em}
-#contact p{margin-bottom:24px}
-@media (min-width:860px){.split{grid-template-columns:240px minmax(0,1fr);gap:28px}}
+/* ---------- About and contact: one section, two short columns ---------- */
+.info{display:grid;grid-template-columns:minmax(0,1fr);gap:20px 48px}
+@media (min-width:760px){.info{grid-template-columns:1.4fr 1fr}}
+.info h2{font-size:17px;margin-bottom:6px}
+.info p{margin:0;color:var(--muted);font-size:15px;line-height:1.6;max-width:36em}
 
 /* ---------- Footer ---------- */
 .footer{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;
@@ -126,7 +129,3 @@ h1,h2,h3{margin:0;color:var(--text);font-weight:700;letter-spacing:-.02em}
 
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media (prefers-reduced-motion:reduce){.btn,.app{transition:none}}
-
-/* Keep the apps in view on first load */
-#apps{padding-top:clamp(24px,3vw,36px)}
-#apps h2{margin-bottom:clamp(16px,2vw,24px)}
