@@ -117,7 +117,7 @@ details p{margin:6px 0 2px}
 /* Screenshots: a swipeable row */
 .shots{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;margin:24px 0;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .shots img{flex:none;width:min(440px,82vw);height:auto;border-radius:14px;border:1px solid var(--line);scroll-snap-align:start;display:block}
-/* Portrait screenshots (Curb Appeal) */
+/* Portrait screenshots */
 .shots-tall img{width:min(240px,60vw)}
 /* All-Sports Scoreboard: landscape shots in a grid */
 .shots-grid{display:grid;grid-template-columns:1fr;gap:12px;overflow:visible}
