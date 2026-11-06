@@ -1,4 +1,0 @@
-/* ScapeCalc pages use the shared Wolfhope Co. styles: one palette site-wide. */
-@import url("../style.css");
-:root{--green:var(--accent)}
-.strata{width:48px;height:4px;border-radius:2px;margin:4px 0 24px;background:var(--accent)}
